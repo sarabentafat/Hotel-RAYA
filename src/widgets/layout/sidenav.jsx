@@ -1,12 +1,14 @@
 import PropTypes from "prop-types";
 import { Link, NavLink } from "react-router-dom";
 import { XMarkIcon } from "@heroicons/react/24/outline";
+import logo from "../../assets/images/logo.svg"
 import {
   Avatar,
   Button,
   IconButton,
   Typography,
 } from "@material-tailwind/react";
+import { CiLogout } from "react-icons/ci";
 import { useMaterialTailwindController, setOpenSidenav } from "../../context";
 import { useState } from "react";
 
@@ -38,10 +40,11 @@ export function Sidenav({ brandImg, brandName, routes }) {
       <div className={`relative`}>
         <Link to="/" className="py-6 px-8 text-center">
           <Typography
+            className=" flex justify-center"
             variant="h6"
             color={sidenavType === "dark" ? "white" : "blue-gray"}
           >
-            {brandName}
+            <img src={logo} alt="" />
           </Typography>
         </Link>
         <IconButton
@@ -88,8 +91,8 @@ export function Sidenav({ brandImg, brandName, routes }) {
           </ul>
         ))}
         {error && <p>{error}</p>}
-        <button className="ml-4 font-bold" onClick={handleLogout}>
-          Log out
+        <button className="ml-4 font-bold flex items-center mt-48 " onClick={handleLogout}>
+          <CiLogout size={32}/> Log out
         </button>
       </div>
     </aside>
@@ -97,7 +100,7 @@ export function Sidenav({ brandImg, brandName, routes }) {
 }
 
 Sidenav.defaultProps = {
-  brandImg: "/img/logo-ct.png",
+  brandImg: `${logo}`,
   brandName: "Raya",
 };
 

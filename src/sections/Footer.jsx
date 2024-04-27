@@ -1,6 +1,8 @@
 import { FaFacebookF } from "react-icons/fa";
 import { AiOutlineTwitter, AiFillYoutube } from "react-icons/ai";
 import { BiLogoPinterestAlt } from "react-icons/bi";
+import logo from "../assets/images/logo.svg";
+import { Link } from "react-router-dom";
 
 function Footer() {
   const iconsTab = [
@@ -13,17 +15,19 @@ function Footer() {
     <>
       <footer className="bg-gray-100 w-full  my-4 py-5  ">
         <div className="md:mx-20 ">
-          {/* footer div all */}
+          {/* Tous les éléments du footer */}
           <div className="flex  my-4  justify-between flex-col md:flex-row  items-center md:items-start  md:gap-[5rem] text-left">
-            {/* logo side */}
+            {/* Partie du logo */}
             <div className="flex flex-col w-1/2 md:p-0 py-4 gap-8">
-              <div className="font-bold text-3xl">logo</div>
+              <div className="font-bold text-3xl">
+                <img src={logo} alt="" className="w-10" />
+              </div>
               <p className="text-[15px] font-medium text-[#646464]">
-                Take your health and body to the next level with our
-                comprehensive program designed to help you reach your fitness
-                goals.
+                Hôtel Raya - Meilleur hôtel <br />
+                Route Lotissement n°1, Tichy, Bejaia, Algérie <br />
+                +213 (0) 34 815 249
               </p>
-              {/* socials */}
+              {/* Réseaux sociaux */}
               <div className="flex gap-7 text-[18px] text-[#646464] justify-center md:justify-start">
                 {iconsTab.map(({ icon }, index) => {
                   return (
@@ -38,46 +42,52 @@ function Footer() {
                 })}
               </div>
               <p className="text-[16px] font-medium text-[#646464]">
-                Privacy Policy | © {new Date().getFullYear()}Hotel <br />
+                Politique de confidentialité | © {new Date().getFullYear()}{" "}
+                Hôtel Raya <br />
               </p>
             </div>
 
-            {/* middle div */}
+            {/* Section centrale */}
             <div className="flex gap-3 ">
               <div className="flex flex-col gap-8 relative">
-                <p className="text-[22px] font-bold footer-main">Abous Us</p>
+                <p className="text-[22px] font-bold footer-main">
+                  À propos de nous
+                </p>
 
                 <span className="top-[33px] absolute w-[7rem] h-[4px] bg-[#BB6C2C]"></span>
 
                 <p className="text-[16px] hover:text-[#BB6C2C] cursor-pointer text-[#646464] font-medium hover:font-bold">
-                  Fitness Classes
+                  Services
                 </p>
                 <p className="text-[16px] hover:text-[#BB6C2C] cursor-pointer text-[#646464] font-medium hover:font-bold">
-                  Aerobics Classes
+                  Événements
                 </p>
                 <p className="text-[16px] hover:text-[#BB6C2C] cursor-pointer text-[#646464] font-medium hover:font-bold">
-                  Power Yoga
+                  Galerie
                 </p>
               </div>
 
-              {/* right div */}
-              <div className="flex flex-col gap-8 relative">
+              {/* Section de droite */}
+              <div className="flex flex-col gap-10 relative">
                 <p className="text-[22px] font-bold footer-main">Contact</p>
 
                 <span className="top-[33px] absolute w-[7rem] h-[4px] bg-[#BB6C2C]"></span>
 
+                <Link to='/reservation'>
+                  {" "}
+                  <p className="text-[16px] hover:text-[#BB6C2C] cursor-pointer text-[#646464] font-medium hover:font-bold">
+                    Réserver une chambre
+                  </p>
+                </Link>
                 <p className="text-[16px] hover:text-[#BB6C2C] cursor-pointer text-[#646464] font-medium hover:font-bold">
-                  Fitness Classes
+                  Contactez-nous
                 </p>
                 <p className="text-[16px] hover:text-[#BB6C2C] cursor-pointer text-[#646464] font-medium hover:font-bold">
-                  Aerobics Classes
-                </p>
-                <p className="text-[16px] hover:text-[#BB6C2C] cursor-pointer text-[#646464] font-medium hover:font-bold">
-                  Power Yoga
+                  FAQ
                 </p>
               </div>
             </div>
-            {/* middle div */}
+            {/* Section centrale */}
             <span></span>
           </div>
         </div>

@@ -19,7 +19,7 @@ export function Footer({ brandName, brandLink, routes }) {
             {brandName}
           </a>
         </Typography>
-        <ul className="flex items-center gap-4">
+        <ul className="flex items-center gap-4 h-screen">
           {routes.map(({ name, path }) => (
             <li key={name}>
               <Typography

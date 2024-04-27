@@ -13,7 +13,7 @@ import { authorsTableData, projectsTableData } from "../../data";
 
 export function Tables() {
   return (
-    <div className="mt-12 mb-8 flex flex-col gap-12">
+    <div className="mt-12 mb-8 flex flex-col gap-12 h-screen">
       <Card>
         <CardHeader variant="gradient" color="gray" className="mb-8 p-6">
           <Typography variant="h6" color="black">
