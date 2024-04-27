@@ -33,7 +33,7 @@ const ReservationForm = () => {
 
     try {
       // Step 1: Create user*
-      console.table({email : formData.email, pass : formData.password})
+      // console.table({email : formData.email, pass : formData.password})
       const userCredential = await createUserWithEmailAndPassword(
         auth,
         formData.email,
@@ -67,11 +67,11 @@ const ReservationForm = () => {
   };
 
   return (
-    <div className="w-full md:flex md:justify-between gap-4">
-      <div className="md:w-[50%] md:block hidden">
+    <div className="w-full md:flex md:justify-between gap-4 mx-auto">
+      <div className="md:w-[50%] lg:block hidden">
         <img src={bg} alt="" className="h-full" />
       </div>
-      <form onSubmit={handleSubmit} className="md:w-[50%] p-4">
+      <form onSubmit={handleSubmit} className="w-full lg:w-[50%] p-4">
         <div>
           {" "}
           <label htmlFor="beginning_day">Email :</label>

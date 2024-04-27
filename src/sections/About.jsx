@@ -4,7 +4,7 @@ import menu from  "../assets/images/menuraya.png"
 
 function About() {
   return (
-    <div className=" mt-32  " id="about">
+    <div className=" mt-32 mx-10  md:mx-0" id="about">
       <div className="container  mx-auto">
         <div
           data-aos="fade-up"

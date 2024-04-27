@@ -1,6 +1,8 @@
 import PropTypes from "prop-types";
 import { Link, NavLink } from "react-router-dom";
 import { XMarkIcon } from "@heroicons/react/24/outline";
+import { useNavigate } from "react-router-dom";
+
 import logo from "../../assets/images/logo.svg"
 import {
   Avatar,
@@ -13,6 +15,7 @@ import { useMaterialTailwindController, setOpenSidenav } from "../../context";
 import { useState } from "react";
 
 export function Sidenav({ brandImg, brandName, routes }) {
+   const navigate = useNavigate();
   const [controller, dispatch] = useMaterialTailwindController();
   const { sidenavColor, sidenavType, openSidenav } = controller;
   const sidenavTypes = {
@@ -24,7 +27,9 @@ export function Sidenav({ brandImg, brandName, routes }) {
 
     const handleLogout = async () => {
       try {
+         navigate("/");
         await firebase.auth().signOut();
+      
         // Redirect to another page or perform any other actions after logout
       } catch (error) {
         setError(error.message);

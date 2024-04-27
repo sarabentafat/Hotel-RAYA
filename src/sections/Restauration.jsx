@@ -3,7 +3,7 @@ import restaurantImage from "../assets/images/restau.png";
 
 function Restauration() {
   return (
-    <div id="restauration" className="bg-gray-100 h-screen justify-center flex items-center  ">
+    <div id="restauration" className="mx-2 md:mx-0 bg-gray-100 h-screen justify-center flex items-center  ">
       <div data-aos="fade-right" className="container mx-auto py-10 px-4">
         <h1 className="text-3xl font-bold mb-8">Restauration</h1>
         <div className="flex flex-col md:flex-row items-center justify-center md:justify-between">
