@@ -67,7 +67,7 @@ const ReservationForm = () => {
   };
 
   return (
-    <div className="w-full md:flex md:justify-between">
+    <div className="w-full md:flex md:justify-between gap-4">
       <div className="md:w-[50%] md:block hidden">
         <img src={bg} alt="" className="h-full" />
       </div>
@@ -198,7 +198,7 @@ const ReservationForm = () => {
 
         {/* You can add more fields as needed */}
 
-        <button className="bg-[#BB6C2C] text-white p-3 rounded" type="submit">
+        <button className="bg-[#BB6C2C] mt-5 text-white p-3 rounded" type="submit">
           Reserver
         </button>
       </form>

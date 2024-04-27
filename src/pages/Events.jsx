@@ -27,9 +27,7 @@ const Events = () => {
           <p className="z-10 relative text-lg">
             Festival de l'Harmonie : Célébrons la diversité et l'unité
           </p>
-          <div className="flex justify-end top-12">
-            <img src={arrow} alt="Flèche vers la droite" />
-          </div>
+         
         </div>
         <div className="flex flex-col gap-1 w-full">
           <div
@@ -41,9 +39,7 @@ const Events = () => {
             <p className="z-10 relative text-lg">
               Festival de l'Harmonie : Célébrons la diversité et l'unité
             </p>
-            <div className="flex justify-end top-12">
-              <img src={arrow} alt="Flèche vers la droite" />
-            </div>
+          
           </div>
           <div
             data-aos="fade-up-right"
