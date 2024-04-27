@@ -11,7 +11,7 @@ import Restauration from "../sections/Restauration";
 const Landing = () => {
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <Home />
       <div>
         {" "}

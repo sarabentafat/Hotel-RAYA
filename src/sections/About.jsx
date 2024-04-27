@@ -4,9 +4,12 @@ import menu from  "../assets/images/menuraya.png"
 
 function About() {
   return (
-    <div className=" mt-32 mx-20 " id='about'>
-      <div className="container px-4">
-        <div className="flex flex-col md:flex-row items-center justify-center md:justify-between">
+    <div className=" mt-32 px-10  " id="about">
+      <div className="container">
+        <div
+          data-aos="fade-up"
+          className="flex flex-col md:flex-row items-center justify-center md:justify-between"
+        >
           <div className="w-full md:w-1/2 text-center md:text-left mb-8 md:mb-0">
             <img
               src={logo}
@@ -29,7 +32,7 @@ function About() {
             />
           </div>
         </div>
-        <div className="mt-10">
+        <div data-aos="fade-up" className="mt-10">
           <h2 className="text-2xl font-bold mb-4">Notre Histoire</h2>
           <p className="text-gray-700">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris

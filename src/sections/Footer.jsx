@@ -79,9 +79,9 @@ function Footer() {
                     Réserver une chambre
                   </p>
                 </Link>
-                <p className="text-[16px] hover:text-[#BB6C2C] cursor-pointer text-[#646464] font-medium hover:font-bold">
+                <Link to='/contact' className="text-[16px] hover:text-[#BB6C2C] cursor-pointer text-[#646464] font-medium hover:font-bold">
                   Contactez-nous
-                </p>
+                </Link>
                 <p className="text-[16px] hover:text-[#BB6C2C] cursor-pointer text-[#646464] font-medium hover:font-bold">
                   FAQ
                 </p>

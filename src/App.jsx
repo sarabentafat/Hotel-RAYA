@@ -23,6 +23,8 @@ import Login from "./pages/Login";
 import Admina from "./pages/Admina";
 import Dashboard from "./layouts/dashboard";
 import routes from "./routes";
+import Restauration from "./sections/Restauration";
+import About from "./sections/About";
 
 // import Dashboard from "./pages/Dashboard";
 // import AdminMain from "./pages/AdminMain";
@@ -34,7 +36,7 @@ function App() {
     <>
       {/* true */}
 
-      {/* <Navbar /> */}
+      <Navbar />
       <Routes>
         <Route index path="/" element={<Landing />} />
         <Route path="/home" element={<Home />} />
@@ -43,15 +45,18 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/events" element={<Events />} />
         <Route path="/reservation" element={<Reservation />} />
+        <Route path="/restauration" element={<Restauration />} />
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/activities" element={<Activities />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/admin" element={<Dashboard />} />
+        <Route path="/about" element={<About />} />
         <Route path="/dashboard" element={<Dashboard />}>
-          <Route path="" element={<Navigate to={"/dashboard/home"}/>}/>
-          <Route path="test" element={<div>test</div>}/>
+          <Route path="" element={<Navigate to={"/dashboard/home"} />} />
+          <Route path="test" element={<div>test</div>} />
           {routes[0].pages.map((page, index) => (
-            <Route key={index} path={page.path}  element={page.element}/>
+            <Route key={index} path={page.path} element={page.element} />
           ))}
           {/* {routes.pages.map((page, index) => (
             <Route key={index} path={page.path} element={page.element} />

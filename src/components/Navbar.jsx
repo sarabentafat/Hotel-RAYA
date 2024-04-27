@@ -40,10 +40,10 @@ const Navbar = () => {
                 href="#about"
                 className="hover:text-white px-3 py-2 rounded-md font-medium"
               >
-                <div onClick={closeNavbar}>About</div>
+                <Link to={'/about'} onClick={closeNavbar}>About</Link>
               </a>
               <a
-                href="#reservation"
+                // href="#reservation"
                 className="hover:text-white px-3 py-2 rounded-md font-medium"
               >
                 <Link to="/reservation" onClick={closeNavbar}>
@@ -51,12 +51,12 @@ const Navbar = () => {
                 </Link>
               </a>
               <a
-                href="#restauration"
+                // href="#restauration"
                 className="hover:text-white px-3 py-2 rounded-md font-medium"
               >
-                <dev to="/restauration" onClick={closeNavbar}>
+                <Link to="/restauration" onClick={closeNavbar}>
                   Restauration
-                </dev>
+                </Link>
               </a>
             </div>
           </div>
