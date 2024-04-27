@@ -4,13 +4,14 @@ import { BiLogoPinterestAlt } from "react-icons/bi";
 import logo from "../assets/images/logo.svg";
 import { Link } from "react-router-dom";
 
+
 function Footer() {
-  const iconsTab = [
-    { icon: <FaFacebookF /> },
-    { icon: <AiOutlineTwitter /> },
-    { icon: <AiFillYoutube /> },
-    { icon: <BiLogoPinterestAlt /> },
-  ];
+ const iconsTab = [
+   { icon: <FaFacebookF />, link: "https://www.facebook.com/Hotel.Raya/" },
+   { icon: <AiOutlineTwitter />, link: "https://twitter.com/example" },
+   { icon: <AiFillYoutube />, link: "https://www.youtube.com/example" },
+   { icon: <BiLogoPinterestAlt />, link: "https://www.pinterest.com/example" },
+ ];
   return (
     <>
       <footer className="bg-gray-100 w-full  my-4 py-5  ">
@@ -29,17 +30,21 @@ function Footer() {
               </p>
               {/* Réseaux sociaux */}
               <div className="flex gap-7 text-[18px] text-[#646464] justify-center md:justify-start">
-                {iconsTab.map(({ icon }, index) => {
-                  return (
+                {iconsTab.map(({ icon, link }, index) => (
+                  <a
+                    key={index}
+                    href={link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <div
-                      key={index}
                       className="text-2xl bg-[#efefef] p-2 rounded-full hover:bg-[#BB6C2C] hover:text-white"
                       style={{ transition: "all 0.3s" }}
                     >
                       {icon}
                     </div>
-                  );
-                })}
+                  </a>
+                ))}
               </div>
               <p className="text-[16px] font-medium text-[#646464]">
                 Politique de confidentialité | © {new Date().getFullYear()}{" "}
@@ -52,7 +57,6 @@ function Footer() {
               <div className="flex flex-col gap-8 relative">
                 <p className=" font-bold text-lg">A propos de nous</p>
 
-        
                 <p className="text-[16px] hover:text-[#BB6C2C] cursor-pointer text-[#646464] font-medium hover:font-bold">
                   Services
                 </p>
@@ -65,10 +69,8 @@ function Footer() {
               </div>
 
               {/* Section de droite */}
-              <div className="flex flex-col gap-10 relative ">
+              <div className="flex flex-col gap-10 relative mt-8 md:mt-0 ">
                 <p className=" font-bold text-lg">Contact</p>
-
-
 
                 <Link to="/reservation">
                   {" "}
