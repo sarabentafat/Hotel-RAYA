@@ -40,12 +40,10 @@ const Navbar = () => {
                 href="#about"
                 className="hover:text-white px-3 py-2 rounded-md font-medium"
               >
-                <Link to="/about" onClick={closeNavbar}>
-                  About
-                </Link>
+                <div onClick={closeNavbar}>About</div>
               </a>
               <a
-                href="#"
+                href="#reservation"
                 className="hover:text-white px-3 py-2 rounded-md font-medium"
               >
                 <Link to="/reservation" onClick={closeNavbar}>
@@ -53,12 +51,12 @@ const Navbar = () => {
                 </Link>
               </a>
               <a
-                href="#"
+                href="#restauration"
                 className="hover:text-white px-3 py-2 rounded-md font-medium"
               >
-                <Link to="/restauration" onClick={closeNavbar}>
+                <dev to="/restauration" onClick={closeNavbar}>
                   Restauration
-                </Link>
+                </dev>
               </a>
             </div>
           </div>
@@ -81,7 +79,10 @@ const Navbar = () => {
         </div>
       </div>
       <div className="flex justify-between lg:hidden ">
-        <a href="#" className="z-0 hover:text-white font-bold  py-2 rounded-md ">
+        <a
+          href="#"
+          className="z-0 hover:text-white font-bold  py-2 rounded-md "
+        >
           <Link to="/" onClick={closeNavbar}>
             <img src={Logo} alt="" className="ml-20" />
           </Link>

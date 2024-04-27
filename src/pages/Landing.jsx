@@ -6,6 +6,7 @@ import Events from "./Events";
 import Rooms from "./Rooms";
 import Activities from "./Activities";
 import Navbar from "../components/Navbar";
+import Restauration from "../sections/Restauration";
 
 const Landing = () => {
   return (
@@ -14,7 +15,7 @@ const Landing = () => {
       <Home />
       <div>
         {" "}
-        {/* <About /> */}
+        <About />
         {/* <iframe
           title="Google Map"
           width="600"
@@ -27,6 +28,7 @@ const Landing = () => {
         ></iframe> */}
         <Events />
         <Rooms />
+        <Restauration/>
         <Activities />
         <div>
           <iframe
