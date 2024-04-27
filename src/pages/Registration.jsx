@@ -21,19 +21,32 @@ const ReservationForm = () => {
     verified: false,
   });
 
+  const [passwordError, setPasswordError] = useState("");
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
+
+    // Check password length
+    if (e.target.name === "password" && e.target.value.length < 8) {
+      setPasswordError("Password should be at least 8 characters long");
+    } else {
+      setPasswordError("");
+    }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    if (formData.password.length < 8) {
+      setPasswordError("Password should be at least 8 characters long");
+      return;
+    }
+
     try {
       // Step 1: Create user*
-      // console.table({email : formData.email, pass : formData.password})
       const userCredential = await createUserWithEmailAndPassword(
         auth,
         formData.email,
@@ -44,8 +57,6 @@ const ReservationForm = () => {
       // Step 2: Assign data to the user
       const reservationRef = doc(db, "NormalUsers", user.uid); // Use user's UID as document ID
       await setDoc(reservationRef, formData);
-
-      console.log("Reservation added to Firestore!");
       // Optionally, reset the form after successful submission
       setFormData({
         beginning_day: "",
@@ -83,7 +94,6 @@ const ReservationForm = () => {
             onChange={handleChange}
             className="peer block py-2.5 px-1 w-full text-sm text-gray-600 bg-transparent border-0 border-b-[2px] appearance-none focus:outline-none focus:ring-0 focus:border-[#FF6464] border-gray-400"
           />
-         
         </div>
         <div>
           <label htmlFor="password">password:</label>
@@ -95,12 +105,13 @@ const ReservationForm = () => {
             onChange={handleChange}
             className="peer block py-2.5 px-1 w-full text-sm text-gray-700 bg-transparent border-0 border-b-[2px] appearance-none focus:outline-none focus:ring-0 focus:border-[#BB6C2C] border-gray-300"
           />
+          {passwordError && <p className="text-red-500">{passwordError}</p>}
         </div>
         <div>
           {" "}
           <label htmlFor="beginning_day">Beginning Day:</label>
           <input
-            type="text"
+            type="date"
             id="beginning_day"
             name="beginning_day"
             value={formData.beginning_day}
@@ -112,7 +123,7 @@ const ReservationForm = () => {
           {" "}
           <label htmlFor="end_day">End Day:</label>
           <input
-            type="text"
+            type="date"
             id="end_day"
             name="end_day"
             value={formData.end_day}
@@ -198,7 +209,10 @@ const ReservationForm = () => {
 
         {/* You can add more fields as needed */}
 
-        <button className="bg-[#BB6C2C] mt-5 text-white p-3 rounded" type="submit">
+        <button
+          className="bg-[#BB6C2C] mt-5 text-white p-3 rounded"
+          type="submit"
+        >
           Reserver
         </button>
       </form>
