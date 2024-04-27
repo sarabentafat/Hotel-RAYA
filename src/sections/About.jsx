@@ -4,8 +4,8 @@ import menu from  "../assets/images/menuraya.png"
 
 function About() {
   return (
-    <div className=" mt-32 px-10  " id="about">
-      <div className="container">
+    <div className=" mt-32  " id="about">
+      <div className="container  mx-auto">
         <div
           data-aos="fade-up"
           className="flex flex-col md:flex-row items-center justify-center md:justify-between"
