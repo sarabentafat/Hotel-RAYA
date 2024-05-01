@@ -79,10 +79,10 @@ const ReservationForm = () => {
 
   return (
     <div className="w-full md:flex md:justify-between gap-4 mx-auto">
-      <div className="md:w-[50%] lg:block hidden">
+      <div className=" md:w-[50%] lg:block hidden">
         <img src={bg} alt="" className="h-full" />
       </div>
-      <form onSubmit={handleSubmit} className="w-full lg:w-[50%] p-4">
+      <form onSubmit={handleSubmit} className="w-full lg:w-[50%] p-4 bg-green-50">
         <div>
           {" "}
           <label htmlFor="beginning_day">Email :</label>
